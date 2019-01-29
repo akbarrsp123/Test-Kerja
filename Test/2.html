@@ -1,0 +1,26 @@
+<form method="post" action="jalan.php" onsubmit="return validasi_input(this)">
+<p><center>Username: <input name="username" type="text"></center></p>
+<p><center>Password: <input name="password" type="password"></center> </p>
+<p><center><input name="" type="submit" value="Submit"></center> </p>
+</form>
+<script type="text/javascript">
+function validasi_input(form){
+   username=/^[_\a-z\-]{8,100}$/;
+   if (!username.test(form.username.value)){
+      alert ('Username minimal 8 karakter, hanya boleh Huruf kecil dan menggunakaan underscore!');
+      form.username.focus();
+      return false;
+   }
+return (true);
+}
+
+function validasi_input(form){
+   username=/^[a-zA-Z0-9\_\-\!\`\~\@\#\$\%\^\&\*\(\)\=\+\<\>\?\:\"\[\]\{\}\;\'\,\.\/"]{8,100}$/;
+   if (!username.test(form.password.value)){
+      alert ('Password minimal 8 karakter, harus terdiri dari huruf kecil, huruf besar, angka, dan karakter spesial. Dengan pangjang 8 karakter.!');
+      form.password.focus();
+      return false;
+   }
+return (true);
+}
+</script>
